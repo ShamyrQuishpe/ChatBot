@@ -16,7 +16,7 @@ import {
 } from '../controllers/client_controller.js'
 
 router.post('/login', loginUsuario) 
-
+//hola
 router.post('/registro' /*,autenticar, verificarRol('Administrador')*/, registroUsuario) 
 
 router.get('/perfil', autenticar, perfilUsuario)
