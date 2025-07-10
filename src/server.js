@@ -4,6 +4,8 @@ import cors from 'cors'
 import routerClients from './routes/client_routes.js'
 import routerProducts from './routes/product_routes.js'
 import routerCategories from './routes/category_routes.js'
+import whatsappRoutes from './whatsapp/wa_routes.js';
+
 
 const app = express ()
 dotenv.config()
@@ -19,7 +21,8 @@ app.get('/',(req,res)=>{
 
 app.use('/chat/users',routerClients) 
 app.use('/chat/products',routerProducts)
-app.use('/chat/products',routerCategories)
+app.use('/chat/categories',routerCategories)
+app.use('/whatsapp', whatsappRoutes);
 
 
 // Manejo de una ruta que no sea encontrada

@@ -16,17 +16,17 @@ import {
 } from '../controllers/client_controller.js'
 
 router.post('/login', loginUsuario) 
-//hola
-router.post('/registro' /*,autenticar, verificarRol('Administrador')*/, registroUsuario) 
+
+router.post('/registro',autenticar, verificarRol('Administrador'), registroUsuario) 
 
 router.get('/perfil', autenticar, perfilUsuario)
 
 router.get('/users',autenticar, verificarRol('Administrador'), listarUsuarios) 
 
-router.put('/nuevapassword/:cedula',autenticar, verificarRol('Administrador'), nuevaPassword) 
+router.put('/nuevapassword/:id',autenticar, verificarRol('Administrador'), nuevaPassword) 
 
-router.put('/users/:cedula',autenticar, verificarRol('Administrador'), actualizarUsuario)
+router.put('/users/:id',autenticar, verificarRol('Administrador'), actualizarUsuario)
 
-router.delete('/users/:cedula',autenticar, verificarRol('Administrador'), eliminarUsuario) 
+router.delete('/users/:id',autenticar, verificarRol('Administrador'), eliminarUsuario) 
 
 export default router

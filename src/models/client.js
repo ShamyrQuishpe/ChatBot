@@ -38,7 +38,7 @@ const clientSchema = new Schema({
     },
     status:{
         type: String,
-        default: true,
+        default: "Activo",
     },
     
 },{

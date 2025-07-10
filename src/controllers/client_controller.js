@@ -44,8 +44,7 @@ const loginUsuario = async (req, res) => {
 
 const registroUsuario = async (req, res) => {
   const { cedula, email, nombre, apellido, area, rol, telefono, password } = req.body;
-   console.log(req.body)
-  // Validar campos obligatorios
+
   if (Object.values(req.body).includes("")) {
   return res.status(400).json({ msg: "Lo sentimos, debes llenar todos los campos" });
   }
@@ -56,9 +55,8 @@ const registroUsuario = async (req, res) => {
       return res.status(400).json({
         msg: "Lo sentimos, ese email ya está registrado"
       });
-      console.log("awdawla")
     }
-    console.log("hola")
+
     // Crear instancia del modelo
     const nuevoUser = new Clients({
       cedula,
@@ -68,7 +66,8 @@ const registroUsuario = async (req, res) => {
       area,
       rol,
       telefono,
-      password 
+      password,
+       
     });
     console.log(nuevoUser)
     // Encriptar la contraseña usando método del modelo
@@ -189,7 +188,7 @@ const eliminarUsuario = async (req, res) => {
     }
 
     // Eliminar usuario
-    await Users.findByIdAndDelete(id);
+    await Clients.findByIdAndDelete(id);
 
     return res.status(200).json({
       msg: "Usuario eliminado correctamente"
