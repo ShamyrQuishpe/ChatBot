@@ -4,6 +4,7 @@ import cors from 'cors'
 import routerClients from './routes/client_routes.js'
 import routerProducts from './routes/product_routes.js'
 import routerCategories from './routes/category_routes.js'
+import routerTradein from './routes/trade_in_routes.js'
 import whatsappRoutes from './whatsapp/wa_routes.js';
 
 
@@ -22,6 +23,7 @@ app.get('/',(req,res)=>{
 app.use('/chat/users',routerClients) 
 app.use('/chat/products',routerProducts)
 app.use('/chat/categories',routerCategories)
+app.use('/chat/tradein',routerTradein)
 app.use('/whatsapp', whatsappRoutes);
 
 

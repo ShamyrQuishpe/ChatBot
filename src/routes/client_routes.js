@@ -7,11 +7,12 @@ const router = Router()
 import {
     loginUsuario,
     registroUsuario,
-    perfilUsuario,
+    perfilCliente,
     listarUsuarios,
     nuevaPassword,
     eliminarUsuario,
     actualizarUsuario,
+
 
 } from '../controllers/client_controller.js'
 
@@ -19,7 +20,7 @@ router.post('/login', loginUsuario)
 
 router.post('/registro',autenticar, verificarRol('Administrador'), registroUsuario) 
 
-router.get('/perfil', autenticar, perfilUsuario)
+router.get('/perfil', autenticar, perfilCliente)
 
 router.get('/users',autenticar, verificarRol('Administrador'), listarUsuarios) 
 

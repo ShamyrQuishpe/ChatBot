@@ -86,7 +86,7 @@ const registroUsuario = async (req, res) => {
   }
 };
 
-const perfilUsuario = async (req, res) => {
+const perfilCliente = async (req, res) => {
     try {
         const id  = req.user._id;
     
@@ -205,7 +205,7 @@ const eliminarUsuario = async (req, res) => {
 export {
     loginUsuario,
     registroUsuario,
-    perfilUsuario,
+    perfilCliente,
     listarUsuarios,
     nuevaPassword,
     actualizarUsuario,
