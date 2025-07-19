@@ -21,6 +21,10 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
+    precioPromocional:{
+        type: Number,
+        default: null
+    },
     responsable: [
         {
             id: { type: mongoose.Schema.Types.ObjectId, ref: 'client' },
